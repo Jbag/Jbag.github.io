@@ -28,7 +28,7 @@
   
 
   
-    <meta name="description" content="引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会再低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压。">
+    <meta name="description" content="引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会在低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压对MOS寿命的影响。">
   
 
   <!-- feed -->
@@ -505,17 +505,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会再低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压。</p>
+  <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。<br>在开关电源电路中，设计这往往会在低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压对MOS寿命的影响。</p>
 <span id="more"></span> 
 
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><ul>
 <li>RC缓冲电路可通过电阻将寄生电容、寄生电感等产生的尖峰电压转换为热，从而降低尖峰电压。</li>
 <li>增加缓冲电路可能会导致效率降低，因此需要探讨噪声水平和效率之间的平衡点。</li>
-<li>电阻是将噪声电压转换为热，因此需要注意电阻的容许损耗。</li>
+<li>电阻是将噪声电压转换为热，因此需要注意Snubber电阻的容许损耗在额定功耗内。</li>
 </ul>
-<p>参考<a target="_blank" rel="noopener" href="https://d1d2qsbl8m0m72.cloudfront.net/en/products/databook/applinote/ic/power/switching_regulator/buck_snubber_app-e.pdf">降压转换器IC的缓冲电路设计</a>，RC缓冲电路可将二极管的接合部、寄生电感、寄生电容、PCB上电感中积蓄的电荷放点，并通过电阻转换为热，从而降低尖峰电压，改善电路性能。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>[2]: </p>
-
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><h3 id="罗姆"><a href="#罗姆" class="headerlink" title="罗姆"></a>罗姆</h3><p>参考指导手册<a target="_blank" rel="noopener" href="https://d1d2qsbl8m0m72.cloudfront.net/en/products/databook/applinote/ic/power/switching_regulator/buck_snubber_app-e.pdf">降压转换器IC的缓冲电路设计</a>，RC缓冲电路可将二极管的接合部、寄生电感、寄生电容、PCB上电感中积蓄的电荷放点，并通过电阻转换为热，从而降低尖峰电压，改善电路性能。</p>
+<h3 id="Ti"><a href="#Ti" class="headerlink" title="Ti"></a>Ti</h3><p>参考Ti指导手册<a target="_blank" rel="noopener" href="https://www.ti.com.cn/cn/lit/an/sloa201/sloa201.pdf">输出Snubber设计指导</a>，</p>
+<ol>
+<li>建议Snubber电阻为10Ω起、SMD封装保证ESL低。记为Rx</li>
+<li>建议Snubber电容470pF到1000pF选、SMD封装。记为Cx</li>
+<li>测量振铃频率，如果没有振铃，增大Snubber电阻或者减小Snubber电容，发生振铃时记录值为C1和R1。</li>
+<li>继续增大Cx为1.5~2倍，保持Rx不变，测量振铃频率，发生振铃时记录值为C2和R2。</li>
+<li>计算等效电感L（按照公式）。</li>
+<li>估算Snubber电阻（与振铃频率、等效电感有关）。</li>
+<li>计算Snubber电阻的功耗（与Snubber电容、输入电压、开关频率有关）。</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1>
   
   
     
@@ -549,10 +558,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-17T13:50:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-08T18:25:17+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 17, 2020</p>
+    <p>更新于：May 8, 2021</p>
   </a>
 </div>
 
@@ -574,7 +583,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jigangujs.github.io/2020/05/17/2020-05-17-RC-snubber-circuit/&title=RC_snubber_circuit - Functional Safety&summary=引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会再低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jigangujs.github.io/2020/05/17/2020-05-17-RC-snubber-circuit/&title=RC_snubber_circuit - Functional Safety&summary=引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会在低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压对MOS寿命的影响。"
           
           >
           
@@ -586,7 +595,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jigangujs.github.io/2020/05/17/2020-05-17-RC-snubber-circuit/&title=RC_snubber_circuit - Functional Safety&summary=引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会再低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jigangujs.github.io/2020/05/17/2020-05-17-RC-snubber-circuit/&title=RC_snubber_circuit - Functional Safety&summary=引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会在低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压对MOS寿命的影响。"
           
           >
           
@@ -598,7 +607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jigangujs.github.io/2020/05/17/2020-05-17-RC-snubber-circuit/&title=RC_snubber_circuit - Functional Safety&summary=引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会再低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jigangujs.github.io/2020/05/17/2020-05-17-RC-snubber-circuit/&title=RC_snubber_circuit - Functional Safety&summary=引言RC吸收电路，也叫RC缓冲电路，也称之为RC Snubber Circuit，是由一个电阻和电容串联组成。在开关电源电路中，设计这往往会在低边MOS侧增加一个这样的电路，为了降低开关节点产生的尖峰电压对MOS寿命的影响。"
           
           >
           
@@ -737,7 +746,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%97%E5%A7%86"><span class="toc-text">罗姆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ti"><span class="toc-text">Ti</span></a></li></ol>
     </div>
   </section>
 
