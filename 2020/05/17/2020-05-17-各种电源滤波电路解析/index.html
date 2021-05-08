@@ -365,8 +365,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='top'>
     
     
-      <p class="title">Volantis</p>
+      <p class="title">Functional Safety</p>
     
+    
+      <p class="subtitle">谨言慎行，君子之道</p>
     
   </div>
   <div class='bottom'>
@@ -510,21 +512,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h1 id="滤波电路种类"><a href="#滤波电路种类" class="headerlink" title="滤波电路种类"></a>滤波电路种类</h1><p>滤波电路主要有下列几种：电容滤波电路，这是最基本的滤波电路；π型RC滤波电路；π型LC滤波电路；电子滤波器电路。</p>
 <h1 id="滤波原理"><a href="#滤波原理" class="headerlink" title="滤波原理"></a>滤波原理</h1><h2 id="单向脉动性直流电压的特点"><a href="#单向脉动性直流电压的特点" class="headerlink" title="单向脉动性直流电压的特点"></a>单向脉动性直流电压的特点</h2><p>如图1（a）所示。是单向脉动性直流电压波形，从图中可以看出，电压的方向性无论在何时都是一致的，但在电压幅度上是波动的，就是在时间轴上，电压呈现出周期性的变化，所以是脉动性的。</p>
 <p>但根据波形分解原理可知，这一电压可以分解一个直流电压和一组频率不同的交流电压，如图1（b）所示。在图1（b）中，虚线部分是单向脉动性直流电压Uo中的直流成分，实线部分是Uo中的交流成分。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE1%E5%8D%95%E5%90%91%E8%84%89%E5%8A%A8%E6%80%A7%E7%94%B5%E5%8E%8B%E7%9A%84%E5%88%86%E8%A7%A3.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE1%E5%8D%95%E5%90%91%E8%84%89%E5%8A%A8%E6%80%A7%E7%94%B5%E5%8E%8B%E7%9A%84%E5%88%86%E8%A7%A3.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
 
 <!-- 图片引用方式采用hexo推荐语法，首页和文章均可以预览图片，不能使用markdown语法。-->
+
+
 
 <h2 id="电容滤波原理"><a href="#电容滤波原理" class="headerlink" title="电容滤波原理"></a>电容滤波原理</h2><p>根据以上的分析，由于单向脉动性直流电压可分解成交流和直流两部分。在电源电路的滤波电路中，利用电容器的“隔直通交”的特性和储能特性，或者利用电感“隔交通直”的特性可以滤除电压中的交流成分。图2所示是电容滤波原理图。</p>
 <p>图2（a）为整流电路的输出电路。交流电压经整流电路之后输出的是单向脉动性直流电，即电路中的Uo。</p>
 <p>图2（b）为电容滤波电路。由于电容C1对直流电相当于开路，这样整流电路输出的直流电压不能通过C1到地，只有加到负载RL。对于整流电路输出的交流成分，因 C1 容量较大，容抗较小，交流成分通过C1流到地端，而不能加到负载RL。这样，通过电容C1的滤波，从单向脉动性直流电中取出了所需要的直流电压+U。</p>
 <p>滤波电容C1的容量越大，对交流成分的容抗越小，使残留在负载RL上的交流成分越小，滤波效果就越好。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE2%E7%94%B5%E5%AE%B9%E6%BB%A4%E6%B3%A2%E5%8E%9F%E7%90%86%E5%9B%BE.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE2%E7%94%B5%E5%AE%B9%E6%BB%A4%E6%B3%A2%E5%8E%9F%E7%90%86%E5%9B%BE.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
 
 
 <h2 id="电感滤波原理"><a href="#电感滤波原理" class="headerlink" title="电感滤波原理"></a>电感滤波原理</h2><p>图3所示是电感滤波原理图。由于电感L1对直流电相当于通路，这样整流电路输出的直流电压直接加到图2所示负载RL上。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE3%E7%94%B5%E6%84%9F%E6%BB%A4%E6%B3%A2%E5%8E%9F%E7%90%86%E5%9B%BE.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE3%E7%94%B5%E6%84%9F%E6%BB%A4%E6%B3%A2%E5%8E%9F%E7%90%86%E5%9B%BE.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
 
 
 <p>对于整流电路输出的交流成分，因L1电感量较大，感抗较大，对交流成分产生很大的阻碍作用，阻止了交流电通过C1流到加到负载RL。这样，通过电感L1的滤波，从单向脉动性直流电中取出了所需要的直流电压+U。</p>
 <p>滤波电感L1的电感量越大，对交流成分的感抗越大，使残留在负载RL上的交流成分越小，滤波效果就越好，但直流电阻也会增大。</p>
 <h1 id="π型RC滤波电路识图方法"><a href="#π型RC滤波电路识图方法" class="headerlink" title="π型RC滤波电路识图方法"></a>π型RC滤波电路识图方法</h1><p>图4所示是π型RC滤波电路。电路中的C1、C2和C3是3只滤波电容，R1和R2是滤波电阻，C1、R1和C2构成第一节π型的RC滤波电路，C2、R2和C3构成第二节π型RC滤波电路。由于这种滤波电路的形式如同希腊字母π和采用了电阻器、电容器，所以称为π型RC滤波电路。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE4%CF%80%E5%9E%8BRC%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE4%CF%80%E5%9E%8BRC%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
 
 
 <p><strong>π型RC滤波电路原理如下：</strong><br>（1）这一电路的滤波原理是：从整流电路输出的电压首先经过C1的滤波，将大部分的交流成分滤除，然后再加到由R1和C2构成的滤波电路中。C2的容抗与R1构成一个分压电路，因C2的容抗很小，所以对交流成分的分压衰减量很大，达到滤波目的。对于直流电而言，由于C2具有隔直作用，所以R1和C2分压电路对直流不存在分压衰减的作用，这样直流电压通过R1输出。</p>
@@ -534,11 +545,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>（5）3个直流输出电压的大小是不同的。Uo1电压最高，一般这一电压直接加到功率放大器电路，或加到需要直流工作电压最高、工作电流最大的电路中；Uo2电压稍低，这是因为电阻R1对直流电压存在电压降；Uo3电压最低，这一电压一般供给前级电路作为直流工作电压，因为前级电路的直流工作电压比较低，且要求直流工作电压中的交流成分少。</p>
 <h1 id="π型-LC滤波电路识图方法"><a href="#π型-LC滤波电路识图方法" class="headerlink" title="π型 LC滤波电路识图方法"></a>π型 LC滤波电路识图方法</h1><p>图5所示是π型LC滤波电路。π型LC滤波电路与π型RC滤波电路基本相同。这一电路只是将滤波电阻换成滤波电感，因为滤波电阻对直流电和交流电存在相同的电阻，而滤波电感对交流电感抗大，对直流电的电阻小，这样既能提高滤波效果，又不会降低直流输出电压。</p>
 <p>在图5的电路中，整流电路输出的单向脉动性直流电压先经电容C1滤波，去掉大部分交流成分，然后再加到L1和C2滤波电路中。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE5%CF%80%E5%9E%8BLC%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE5%CF%80%E5%9E%8BLC%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
 
 
 <p>对于交流成分而言，L1对它的感抗很大，这样在L1上的交流电压降大，加到负载上的交流成分小。</p>
 <p>对直流电而言，由于L1不呈现感抗，相当于通路，同时滤波电感采用的线径较粗，直流电阻很小，这样对直流电压基本上没有电压降，所以直流输出电压比较高，这是采用电感滤波器的主要优点。</p>
 <h1 id="电子滤波器识图方法"><a href="#电子滤波器识图方法" class="headerlink" title="电子滤波器识图方法"></a>电子滤波器识图方法</h1><h2 id="电子滤波器"><a href="#电子滤波器" class="headerlink" title="电子滤波器"></a>电子滤波器</h2><p>图6所示是电子滤波器。电路中的VT1是三极管，起到滤波管作用，C1是VT1的基极滤波电容，R1是VT1的基极偏置电阻，RL是这一滤波电路的负载，C2是输出电压的滤波电容。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE6%E7%94%B5%E5%AD%90%E6%BB%A4%E6%B3%A2%E5%99%A8.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE6%E7%94%B5%E5%AD%90%E6%BB%A4%E6%B3%A2%E5%99%A8.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
 
 
 <p>电子滤波电路工作原理如下：</p>
@@ -547,6 +562,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>③在电子滤波器中，滤波主要是靠R1和C1实现的，这也是RC滤波电路，但与前面介绍的RC滤波电路是不同的。在这一电路中流过负载的直流电流是VT1的发射极电流，流过滤波电阻R1的电流是VT1基极电流，基极电流很小，所以可以使滤波电阻R1的阻值设得很大（滤波效果好），但不会使直流输出电压下降很多。</p>
 <p>④电路中的R1的阻值大小决定了VT1的基极电流大小，从而决定了VT1集电极与发射极之间的管压降，也就决定了VT1发射极输出直流电压大小，所以改变R1的大小，可以调整直流输出电压+V的大小。</p>
 <h2 id="电子稳压滤波器"><a href="#电子稳压滤波器" class="headerlink" title="电子稳压滤波器"></a>电子稳压滤波器</h2><p>图7所示是另一种电子稳压滤波器，与前一种电 路相比，在 VT1 基极与地端之间接入了稳压二极管 VD1。</p>
+<img src="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE7%E7%94%B5%E5%AD%90%E7%A8%B3%E5%8E%8B%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%94%B5%E8%B7%AF.png" class="lazyload" data-srcset="/2020/05/17/2020-05-17-%E5%90%84%E7%A7%8D%E7%94%B5%E6%BA%90%E6%BB%A4%E6%B3%A2%E7%94%B5%E8%B7%AF%E8%A7%A3%E6%9E%90/%E5%9B%BE7%E7%94%B5%E5%AD%90%E7%A8%B3%E5%8E%8B%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%94%B5%E8%B7%AF.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
 
 
 <p><strong>电子稳压原理如下：</strong></p>
@@ -594,10 +611,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-17T11:24:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-07T13:00:16+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 17, 2020</p>
+    <p>更新于：May 7, 2021</p>
   </a>
 </div>
 
