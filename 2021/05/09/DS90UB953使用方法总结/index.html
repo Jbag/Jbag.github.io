@@ -26,6 +26,8 @@
   
 
   
+    <meta name="description" content="背景这篇文章主要记录953硬件开发时的总结">
+  
 
   <!-- feed -->
   
@@ -495,9 +497,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>这篇文章主要记录953硬件开发时的总结</p>
+<span id="more"></span> 
+
 <hr>
 <p>[TOC]</p>
-<h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><h2 id="电源供电"><a href="#电源供电" class="headerlink" title="电源供电"></a>电源供电</h2><h2 id="晶振"><a href="#晶振" class="headerlink" title="晶振"></a>晶振</h2><h2 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h2><h2 id="上电初始化时序"><a href="#上电初始化时序" class="headerlink" title="上电初始化时序"></a>上电初始化时序</h2><h2 id="I2C地址及电平配置"><a href="#I2C地址及电平配置" class="headerlink" title="I2C地址及电平配置"></a>I2C地址及电平配置</h2><h2 id="Power-Down配置"><a href="#Power-Down配置" class="headerlink" title="Power Down配置"></a>Power Down配置</h2><h2 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h2><h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><h2 id="上电自检BIST"><a href="#上电自检BIST" class="headerlink" title="上电自检BIST"></a>上电自检BIST</h2><p><img src="/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/Documents\Github\blog\source_posts\DS90UB953使用方法总结\BIST_953_954.png" class="lazyload" data-srcset="/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/Documents\Github\blog\source_posts\DS90UB953使用方法总结\BIST_953_954.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="BIST_953_954"></p>
+<h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><h2 id="电源供电"><a href="#电源供电" class="headerlink" title="电源供电"></a>电源供电</h2><h2 id="晶振"><a href="#晶振" class="headerlink" title="晶振"></a>晶振</h2><h2 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h2><h2 id="上电初始化时序"><a href="#上电初始化时序" class="headerlink" title="上电初始化时序"></a>上电初始化时序</h2><h2 id="I2C地址及电平配置"><a href="#I2C地址及电平配置" class="headerlink" title="I2C地址及电平配置"></a>I2C地址及电平配置</h2><h2 id="Power-Down配置"><a href="#Power-Down配置" class="headerlink" title="Power Down配置"></a>Power Down配置</h2><h2 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h2><h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><h2 id="上电自检BIST"><a href="#上电自检BIST" class="headerlink" title="上电自检BIST"></a>上电自检BIST</h2><img src="/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/BIST_953_954.png" class="lazyload" data-srcset="/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/BIST_953_954.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" class>
+
+
+
 <h2 id="常用寄存器"><a href="#常用寄存器" class="headerlink" title="常用寄存器"></a>常用寄存器</h2>
   
   
@@ -532,7 +539,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-09T14:18:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-09T14:34:29+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：May 9, 2021</p>
@@ -554,7 +561,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jigangujs.github.io/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/&title=DS90UB953使用方法总结 - Functional Safety&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jigangujs.github.io/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/&title=DS90UB953使用方法总结 - Functional Safety&summary=背景这篇文章主要记录953硬件开发时的总结"
           
           >
           
@@ -566,7 +573,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jigangujs.github.io/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/&title=DS90UB953使用方法总结 - Functional Safety&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://jigangujs.github.io/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/&title=DS90UB953使用方法总结 - Functional Safety&summary=背景这篇文章主要记录953硬件开发时的总结"
           
           >
           
@@ -578,7 +585,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jigangujs.github.io/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/&title=DS90UB953使用方法总结 - Functional Safety&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://jigangujs.github.io/2021/05/09/DS90UB953%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/&title=DS90UB953使用方法总结 - Functional Safety&summary=背景这篇文章主要记录953硬件开发时的总结"
           
           >
           
@@ -610,7 +617,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/05/09/DS90UB954%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>DS90UB954使用方法总结</p>
-          <p class='content'></p>
+          <p class='content'>这篇文章主要记录954硬件开发时的总结
+ 
+
+</p>
         </a>
       
       
